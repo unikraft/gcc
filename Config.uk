@@ -5,7 +5,7 @@ menuconfig LIBGCC
 	select LIBUKALLOC
 	select LIBNEWLIBC
 	select LIBUKMMAP
-	select UKSYSINFO
+	select LIBPOSIX_SYSINFO
 
 if LIBGCC
 
