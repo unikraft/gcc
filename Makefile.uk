@@ -77,6 +77,16 @@ CXXINCLUDES-$(CONFIG_LIBGCOV) += -I$(LIBGCC_BASE)/libgcov/include -I$(LIBGCC_EXT
 	-I$(LIBGCC_EXTRACTED)/gcc -I$(LIBGCC_EXTRACTED)/libgcc
 
 ################################################################################
+# Library compile flags
+################################################################################
+
+# Collect coverage information via Gcov.
+# Note that this option only adds coverage counters for each branch or call.
+# While it may be used for PGO (profile-guided optimization) and coverage testing,
+# those options (-fprofile-generate, -ftest-coverage) are not included.
+COMPFLAGS-$(CONFIG_COVERAGE_TOOL_GCOV) += -fprofile-arcs
+
+################################################################################
 # libbacktrace code
 ################################################################################
 LIBBACKTRACE_CINCLUDES-y = -I$(LIBGCC_BASE)/libbacktrace/include \
