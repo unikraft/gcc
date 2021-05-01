@@ -71,8 +71,10 @@ CXXINCLUDES-$(CONFIG_LIBBACKTRACE) += -I$(LIBGCC_BASE)/libbacktrace/include
 CINCLUDES-$(CONFIG_LIBFFI)   += -I$(LIBGCC_BASE)/libffi/include
 CXXINCLUDES-$(CONFIG_LIBFFI) += -I$(LIBGCC_BASE)/libffi/include
 
-CINCLUDES-$(CONFIG_LIBGCOV)   += -I$(LIBGCC_BASE)/libgcov/include
-CXXINCLUDES-$(CONFIG_LIBGCOV) += -I$(LIBGCC_BASE)/libgcov/include
+CINCLUDES-$(CONFIG_LIBGCOV)   += -I$(LIBGCC_BASE)/libgcov/include -I$(LIBGCC_EXTRACTED)/include \
+	-I$(LIBGCC_EXTRACTED)/gcc -I$(LIBGCC_EXTRACTED)/libgcc
+CXXINCLUDES-$(CONFIG_LIBGCOV) += -I$(LIBGCC_BASE)/libgcov/include -I$(LIBGCC_EXTRACTED)/include \
+	-I$(LIBGCC_EXTRACTED)/gcc -I$(LIBGCC_EXTRACTED)/libgcc
 
 ################################################################################
 # libbacktrace code
